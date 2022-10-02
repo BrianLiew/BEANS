@@ -7,26 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D37D3A9A28D671530003237E /* BEANSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3A9928D671530003237E /* BEANSApp.swift */; };
-		D37D3A9C28D671530003237E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3A9B28D671530003237E /* ContentView.swift */; };
-		D37D3A9E28D671540003237E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D3A9D28D671540003237E /* Assets.xcassets */; };
-		D37D3AA128D671540003237E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D3AA028D671540003237E /* Preview Assets.xcassets */; };
-		D37D3AA328D671540003237E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AA228D671540003237E /* Persistence.swift */; };
-		D37D3AA628D671540003237E /* BEANS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AA428D671540003237E /* BEANS.xcdatamodeld */; };
+		D37D3AD128D986580003237E /* BEANSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD028D986580003237E /* BEANSApp.swift */; };
+		D37D3AD328D986580003237E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD228D986580003237E /* ContentView.swift */; };
+		D37D3AD528D9865A0003237E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D3AD428D9865A0003237E /* Assets.xcassets */; };
+		D37D3AD828D9865A0003237E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D3AD728D9865A0003237E /* Preview Assets.xcassets */; };
+		D37D3ADA28D9865A0003237E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD928D9865A0003237E /* Persistence.swift */; };
+		D37D3ADD28D9865A0003237E /* BEANS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37D3ADB28D9865A0003237E /* BEANS.xcdatamodeld */; };
+		D37D3AE628E1783D0003237E /* CreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE528E1783D0003237E /* CreationView.swift */; };
+		D37D3AE828E277090003237E /* PercentageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE728E277090003237E /* PercentageDetailView.swift */; };
+		D37D3AEA28E28E6A0003237E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE928E28E6A0003237E /* Shapes.swift */; };
+		D37D3AEC28E28EA40003237E /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AEB28E28EA40003237E /* RingView.swift */; };
+		D37D3AEE28E28EE40003237E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AED28E28EE40003237E /* Utilities.swift */; };
+		D37D3AF028E298D30003237E /* PercentageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AEF28E298D30003237E /* PercentageRowView.swift */; };
+		D37D3AF428E598BF0003237E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AF328E598BE0003237E /* ProgressView.swift */; };
+		D37D3AF628E6E7350003237E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AF528E6E7340003237E /* ColorPickerView.swift */; };
+		D37D3AFE28E791170003237E /* AccumulatorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AFD28E791170003237E /* AccumulatorRowView.swift */; };
+		D37D3B0228E791CC0003237E /* AccumulatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3B0128E791CC0003237E /* AccumulatorDetailView.swift */; };
+		D37D3B0528E799F80003237E /* GoalCreationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D37D3A9628D671530003237E /* BEANS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BEANS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D37D3A9928D671530003237E /* BEANSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEANSApp.swift; sourceTree = "<group>"; };
-		D37D3A9B28D671530003237E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D37D3A9D28D671540003237E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D37D3AA028D671540003237E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D37D3AA228D671540003237E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		D37D3AA528D671540003237E /* BEANS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BEANS.xcdatamodel; sourceTree = "<group>"; };
+		D37D3ACD28D986580003237E /* BEANS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BEANS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D37D3AD028D986580003237E /* BEANSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BEANSApp.swift; sourceTree = "<group>"; };
+		D37D3AD228D986580003237E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D37D3AD428D9865A0003237E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D37D3AD728D9865A0003237E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D37D3AD928D9865A0003237E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		D37D3ADC28D9865A0003237E /* BEANS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BEANS.xcdatamodel; sourceTree = "<group>"; };
+		D37D3AE528E1783D0003237E /* CreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationView.swift; sourceTree = "<group>"; };
+		D37D3AE728E277090003237E /* PercentageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageDetailView.swift; sourceTree = "<group>"; };
+		D37D3AE928E28E6A0003237E /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		D37D3AEB28E28EA40003237E /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		D37D3AED28E28EE40003237E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		D37D3AEF28E298D30003237E /* PercentageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageRowView.swift; sourceTree = "<group>"; };
+		D37D3AF328E598BE0003237E /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		D37D3AF528E6E7340003237E /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		D37D3AF828E6EF160003237E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D37D3AFD28E791170003237E /* AccumulatorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorRowView.swift; sourceTree = "<group>"; };
+		D37D3B0128E791CC0003237E /* AccumulatorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorDetailView.swift; sourceTree = "<group>"; };
+		D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D37D3A9328D671530003237E /* Frameworks */ = {
+		D37D3ACA28D986580003237E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,53 +59,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D37D3A8D28D671530003237E = {
+		D37D3AC428D986580003237E = {
 			isa = PBXGroup;
 			children = (
-				D37D3A9828D671530003237E /* BEANS */,
-				D37D3A9728D671530003237E /* Products */,
+				D37D3ACF28D986580003237E /* BEANS */,
+				D37D3ACE28D986580003237E /* Products */,
+				D37D3AF728E6EF160003237E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		D37D3A9728D671530003237E /* Products */ = {
+		D37D3ACE28D986580003237E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D37D3A9628D671530003237E /* BEANS.app */,
+				D37D3ACD28D986580003237E /* BEANS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D37D3A9828D671530003237E /* BEANS */ = {
+		D37D3ACF28D986580003237E /* BEANS */ = {
 			isa = PBXGroup;
 			children = (
-				D37D3A9928D671530003237E /* BEANSApp.swift */,
-				D37D3A9B28D671530003237E /* ContentView.swift */,
-				D37D3A9D28D671540003237E /* Assets.xcassets */,
-				D37D3AA228D671540003237E /* Persistence.swift */,
-				D37D3AA428D671540003237E /* BEANS.xcdatamodeld */,
-				D37D3A9F28D671540003237E /* Preview Content */,
+				D37D3AD028D986580003237E /* BEANSApp.swift */,
+				D37D3B0328E792030003237E /* MainViews */,
+				D37D3B0028E7915A0003237E /* ViewComponents */,
+				D37D3AFF28E791260003237E /* RowViews */,
+				D37D3AD428D9865A0003237E /* Assets.xcassets */,
+				D37D3AE928E28E6A0003237E /* Shapes.swift */,
+				D37D3AED28E28EE40003237E /* Utilities.swift */,
+				D37D3AD928D9865A0003237E /* Persistence.swift */,
+				D37D3ADB28D9865A0003237E /* BEANS.xcdatamodeld */,
+				D37D3AD628D9865A0003237E /* Preview Content */,
 			);
 			path = BEANS;
 			sourceTree = "<group>";
 		};
-		D37D3A9F28D671540003237E /* Preview Content */ = {
+		D37D3AD628D9865A0003237E /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				D37D3AA028D671540003237E /* Preview Assets.xcassets */,
+				D37D3AD728D9865A0003237E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D37D3AF728E6EF160003237E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D37D3AF828E6EF160003237E /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D37D3AFF28E791260003237E /* RowViews */ = {
+			isa = PBXGroup;
+			children = (
+				D37D3AEF28E298D30003237E /* PercentageRowView.swift */,
+				D37D3AFD28E791170003237E /* AccumulatorRowView.swift */,
+			);
+			path = RowViews;
+			sourceTree = "<group>";
+		};
+		D37D3B0028E7915A0003237E /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D37D3AF528E6E7340003237E /* ColorPickerView.swift */,
+				D37D3AF328E598BE0003237E /* ProgressView.swift */,
+				D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */,
+				D37D3AEB28E28EA40003237E /* RingView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		D37D3B0328E792030003237E /* MainViews */ = {
+			isa = PBXGroup;
+			children = (
+				D37D3AD228D986580003237E /* ContentView.swift */,
+				D37D3AE528E1783D0003237E /* CreationView.swift */,
+				D37D3AE728E277090003237E /* PercentageDetailView.swift */,
+				D37D3B0128E791CC0003237E /* AccumulatorDetailView.swift */,
+			);
+			path = MainViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D37D3A9528D671530003237E /* BEANS */ = {
+		D37D3ACC28D986580003237E /* BEANS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D37D3AA928D671540003237E /* Build configuration list for PBXNativeTarget "BEANS" */;
+			buildConfigurationList = D37D3AE028D9865A0003237E /* Build configuration list for PBXNativeTarget "BEANS" */;
 			buildPhases = (
-				D37D3A9228D671530003237E /* Sources */,
-				D37D3A9328D671530003237E /* Frameworks */,
-				D37D3A9428D671530003237E /* Resources */,
+				D37D3AC928D986580003237E /* Sources */,
+				D37D3ACA28D986580003237E /* Frameworks */,
+				D37D3ACB28D986580003237E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -90,25 +157,25 @@
 			);
 			name = BEANS;
 			productName = BEANS;
-			productReference = D37D3A9628D671530003237E /* BEANS.app */;
+			productReference = D37D3ACD28D986580003237E /* BEANS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D37D3A8E28D671530003237E /* Project object */ = {
+		D37D3AC528D986580003237E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
-					D37D3A9528D671530003237E = {
+					D37D3ACC28D986580003237E = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
-			buildConfigurationList = D37D3A9128D671530003237E /* Build configuration list for PBXProject "BEANS" */;
+			buildConfigurationList = D37D3AC828D986580003237E /* Build configuration list for PBXProject "BEANS" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,44 +183,55 @@
 				en,
 				Base,
 			);
-			mainGroup = D37D3A8D28D671530003237E;
-			productRefGroup = D37D3A9728D671530003237E /* Products */;
+			mainGroup = D37D3AC428D986580003237E;
+			productRefGroup = D37D3ACE28D986580003237E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D37D3A9528D671530003237E /* BEANS */,
+				D37D3ACC28D986580003237E /* BEANS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D37D3A9428D671530003237E /* Resources */ = {
+		D37D3ACB28D986580003237E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37D3AA128D671540003237E /* Preview Assets.xcassets in Resources */,
-				D37D3A9E28D671540003237E /* Assets.xcassets in Resources */,
+				D37D3AD828D9865A0003237E /* Preview Assets.xcassets in Resources */,
+				D37D3AD528D9865A0003237E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D37D3A9228D671530003237E /* Sources */ = {
+		D37D3AC928D986580003237E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37D3AA328D671540003237E /* Persistence.swift in Sources */,
-				D37D3A9C28D671530003237E /* ContentView.swift in Sources */,
-				D37D3A9A28D671530003237E /* BEANSApp.swift in Sources */,
-				D37D3AA628D671540003237E /* BEANS.xcdatamodeld in Sources */,
+				D37D3B0528E799F80003237E /* GoalCreationComponentView.swift in Sources */,
+				D37D3AEA28E28E6A0003237E /* Shapes.swift in Sources */,
+				D37D3AF028E298D30003237E /* PercentageRowView.swift in Sources */,
+				D37D3AFE28E791170003237E /* AccumulatorRowView.swift in Sources */,
+				D37D3AF428E598BF0003237E /* ProgressView.swift in Sources */,
+				D37D3ADA28D9865A0003237E /* Persistence.swift in Sources */,
+				D37D3AE828E277090003237E /* PercentageDetailView.swift in Sources */,
+				D37D3AD328D986580003237E /* ContentView.swift in Sources */,
+				D37D3AEC28E28EA40003237E /* RingView.swift in Sources */,
+				D37D3AD128D986580003237E /* BEANSApp.swift in Sources */,
+				D37D3AEE28E28EE40003237E /* Utilities.swift in Sources */,
+				D37D3B0228E791CC0003237E /* AccumulatorDetailView.swift in Sources */,
+				D37D3ADD28D9865A0003237E /* BEANS.xcdatamodeld in Sources */,
+				D37D3AF628E6E7350003237E /* ColorPickerView.swift in Sources */,
+				D37D3AE628E1783D0003237E /* CreationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		D37D3AA728D671540003237E /* Debug */ = {
+		D37D3ADE28D9865A0003237E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -213,7 +291,7 @@
 			};
 			name = Debug;
 		};
-		D37D3AA828D671540003237E /* Release */ = {
+		D37D3ADF28D9865A0003237E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -267,7 +345,7 @@
 			};
 			name = Release;
 		};
-		D37D3AAA28D671540003237E /* Debug */ = {
+		D37D3AE128D9865A0003237E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -278,6 +356,7 @@
 				DEVELOPMENT_TEAM = BPK4BTV343;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BEANS;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,7 +375,7 @@
 			};
 			name = Debug;
 		};
-		D37D3AAB28D671540003237E /* Release */ = {
+		D37D3AE228D9865A0003237E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -307,6 +386,7 @@
 				DEVELOPMENT_TEAM = BPK4BTV343;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = BEANS;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,20 +408,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D37D3A9128D671530003237E /* Build configuration list for PBXProject "BEANS" */ = {
+		D37D3AC828D986580003237E /* Build configuration list for PBXProject "BEANS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D37D3AA728D671540003237E /* Debug */,
-				D37D3AA828D671540003237E /* Release */,
+				D37D3ADE28D9865A0003237E /* Debug */,
+				D37D3ADF28D9865A0003237E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D37D3AA928D671540003237E /* Build configuration list for PBXNativeTarget "BEANS" */ = {
+		D37D3AE028D9865A0003237E /* Build configuration list for PBXNativeTarget "BEANS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D37D3AAA28D671540003237E /* Debug */,
-				D37D3AAB28D671540003237E /* Release */,
+				D37D3AE128D9865A0003237E /* Debug */,
+				D37D3AE228D9865A0003237E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -349,17 +429,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D37D3AA428D671540003237E /* BEANS.xcdatamodeld */ = {
+		D37D3ADB28D9865A0003237E /* BEANS.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D37D3AA528D671540003237E /* BEANS.xcdatamodel */,
+				D37D3ADC28D9865A0003237E /* BEANS.xcdatamodel */,
 			);
-			currentVersion = D37D3AA528D671540003237E /* BEANS.xcdatamodel */;
+			currentVersion = D37D3ADC28D9865A0003237E /* BEANS.xcdatamodel */;
 			path = BEANS.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = D37D3A8E28D671530003237E /* Project object */;
+	rootObject = D37D3AC528D986580003237E /* Project object */;
 }

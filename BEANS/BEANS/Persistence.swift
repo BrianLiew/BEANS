@@ -2,32 +2,17 @@
 //  Persistence.swift
 //  BEANS
 //
-//  Created by Brian Liew on 9/17/22.
+//  Created by Brian Liew on 9/20/22.
 //
 
 import CoreData
+import SwiftUI
 
 struct PersistenceController {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     static let shared = PersistenceController()
-
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
+    
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {
@@ -53,4 +38,85 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    func save(viewContext: NSManagedObjectContext) -> Void {
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    // MARK: - ACCUMULATOR TASK
+    
+    func addAccumulatorTask(name: String, color: String, progress: Double, viewContext: NSManagedObjectContext) -> Void {
+        let task = AccumulatorTask(context: viewContext)
+        task.id = UUID()
+        task.birth = Date.now
+        task.name = name
+        task.color = color
+        task.progress = progress
+        
+        save(viewContext: viewContext)
+    }
+    
+    func editAccumulatorTask(task: AccumulatorTask, name: String, progress: Double, viewContext: NSManagedObjectContext) -> Void {
+        task.name = name
+        task.progress = progress
+        
+        save(viewContext: viewContext)
+    }
+    
+    func deleteAccumulatorTask(offsets: IndexSet, tasks: FetchedResults<AccumulatorTask>, viewContext: NSManagedObjectContext) {
+        offsets.map { tasks[$0] }.forEach(viewContext.delete)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    // MARK: - PERCENTAGE TASK
+    
+    func addPercentageTask(name: String, color: String, progress: Double, goal: Double, viewContext: NSManagedObjectContext) -> Void {
+        let task = PercentageTask(context: viewContext)
+        task.id = UUID()
+        task.birth = Date.now
+        task.name = name
+        task.color = color
+        task.progress = progress
+        task.goal = goal
+        
+        save(viewContext: viewContext)
+    }
+    
+    func editPercentageTask(task: PercentageTask, name: String, progress: Double, viewContext: NSManagedObjectContext) -> Void {
+        task.name = name
+        task.progress = progress
+        
+        save(viewContext: viewContext)
+    }
+    
+    func deletePercentageTask(offsets: IndexSet, tasks: FetchedResults<PercentageTask>, viewContext: NSManagedObjectContext) {
+        offsets.map { tasks[$0] }.forEach(viewContext.delete)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    
+    
 }
