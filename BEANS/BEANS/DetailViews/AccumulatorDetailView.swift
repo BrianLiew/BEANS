@@ -12,7 +12,10 @@ struct AccumulatorDetailView: View {
 
     @State private var progress: Double = 0
     
-    @FocusState private var focused
+    private enum Field {
+        case name, increment
+    }
+    @FocusState private var focusedField: Field?
     
     var body: some View {
         VStack {
@@ -25,6 +28,7 @@ struct AccumulatorDetailView: View {
                         .bold()
                         .scaledToFit()
                         .minimumScaleFactor(0.5)
+                        .focused($focusedField, equals: .name)
                         .fixedSize(horizontal: false, vertical: true)
                         .foregroundColor(Color.white.opacity(0.5))
                         .multilineTextAlignment(.center)
@@ -33,6 +37,10 @@ struct AccumulatorDetailView: View {
                             task.name = name
                             PersistenceController().save(viewContext: viewContext)
                         }
+                        .onChange(of: name, perform: { _ in
+                            task.name = name
+                            PersistenceController().save(viewContext: self.viewContext)
+                        })
                 }
                     .frame(minHeight: 50, maxHeight: 100)
                 Text("Started \(Utilities.timeFormatter(time: task.birth!))")
@@ -53,6 +61,7 @@ struct AccumulatorDetailView: View {
                 Button {
                     task.increment = Double(increment)!
                     task.progress -= task.increment
+                    task.lastUpdated = Date.now
                     progress = task.progress
                     PersistenceController().save(viewContext: viewContext)
                 } label: {
@@ -66,6 +75,7 @@ struct AccumulatorDetailView: View {
                     .multilineTextAlignment(.center)
                     .background(Color.gray.opacity(0.5))
                     .cornerRadius(10)
+                    .focused($focusedField, equals: .increment)
                     .keyboardType(.decimalPad)
                     .onSubmit {
                         task.increment = Double(increment)!
@@ -75,6 +85,7 @@ struct AccumulatorDetailView: View {
                 Button {
                     task.increment = Double(increment)!
                     task.progress += task.increment
+                    task.lastUpdated = Date.now
                     progress = task.progress
                     PersistenceController().save(viewContext: viewContext)
                 } label: {

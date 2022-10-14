@@ -117,6 +117,36 @@ struct PersistenceController {
         }
     }
     
+    // MARK: - TIMED TASK
     
+    func addTimedTask(name: String, color: String, viewContext: NSManagedObjectContext) -> Void {
+        let task = TimedTask(context: viewContext)
+        task.id = UUID()
+        task.birth = Date.now
+        task.name = name
+        task.color = color
+        task.progress = 0
+        
+        save(viewContext: viewContext)
+    }
+    
+    func editTimedTask(task: PercentageTask, name: String, viewContext: NSManagedObjectContext) -> Void {
+        task.name = name
+        
+        save(viewContext: viewContext)
+    }
+    
+    func deleteTimedTask(offsets: IndexSet, tasks: FetchedResults<TimedTask>, viewContext: NSManagedObjectContext) {
+        offsets.map { tasks[$0] }.forEach(viewContext.delete)
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
     
 }

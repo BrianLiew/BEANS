@@ -5,10 +5,40 @@ struct Utilities {
     
     static func formatNumber(value: Double) -> String {
         let formatter = NumberFormatter()
-        formatter.usesSignificantDigits = true
-        formatter.maximumSignificantDigits = 3
         
-        return "\(formatter.string(from: NSNumber.init(value: value))!)"
+        // if value has fractional values
+        if (value.truncatingRemainder(dividingBy: 1) > 0) {
+            formatter.usesSignificantDigits = true
+            formatter.alwaysShowsDecimalSeparator = true
+        }
+        // if value is a whole number
+        else {
+            formatter.usesSignificantDigits = false
+            formatter.alwaysShowsDecimalSeparator = false
+            formatter.maximumFractionDigits = 0
+        }
+        
+        return formatter.string(from: NSNumber.init(value: value))!
+    }
+    
+    static func formatPercentage(value: Double) -> String {
+        let formatter = NumberFormatter()
+        
+        // if value has fractional values
+        if (value.truncatingRemainder(dividingBy: 1) > 0) {
+            formatter.usesSignificantDigits = true
+            formatter.alwaysShowsDecimalSeparator = true
+            formatter.maximumFractionDigits = 2
+            formatter.roundingIncrement = 0.01
+        }
+        // if value is a whole number
+        else {
+            formatter.usesSignificantDigits = false
+            formatter.alwaysShowsDecimalSeparator = false
+            formatter.maximumFractionDigits = 0
+        }
+        
+        return "\(formatter.string(from: NSNumber.init(value: value))!)%"
     }
     
     static func timeFormatter(time: Date) -> String {
@@ -54,7 +84,7 @@ extension Gradient {
             case "purple":
                 colors = [.purple, .indigo]
             default:
-                colors = [.white, .black]
+                colors = [.white, .gray]
         }
         
         self.init(colors: colors)

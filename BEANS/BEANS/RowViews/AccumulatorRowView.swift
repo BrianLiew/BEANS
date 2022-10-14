@@ -28,7 +28,8 @@ struct AccumulatorRowView: View {
             Text(name)
                 .font(.title)
                 .bold()
-                .padding(.bottom, 10)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Utilities.getColorFromString(string: task.color!))
                 .onAppear() {
                     self.name = task.name!
                 }

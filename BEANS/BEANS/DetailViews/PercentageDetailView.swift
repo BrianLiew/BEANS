@@ -14,6 +14,12 @@ struct PercentageDetailView: View {
     @State private var progress: Double = 0
     @State private var goal: Double = 0
     
+    private enum Field {
+        case name, increment
+    }
+    
+    @FocusState private var focusedField: Field?
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -24,6 +30,7 @@ struct PercentageDetailView: View {
                         TextField("\(task.name!)", text: $name)
                             .font(.largeTitle)
                             .bold()
+                            .focused($focusedField, equals: .name)
                             .scaledToFit()
                             .minimumScaleFactor(0.5)
                             .fixedSize(horizontal: false, vertical: true)
@@ -39,7 +46,7 @@ struct PercentageDetailView: View {
                                 PersistenceController().save(viewContext: self.viewContext)
                             })
                     }
-                        .frame(minHeight: 50, maxHeight: 50)
+                        .frame(minHeight: 50, maxHeight: 100)
                     Text("Started \(Utilities.timeFormatter(time: task.birth!))")
                         .font(.headline)
                         .foregroundColor(.gray)
@@ -77,6 +84,7 @@ struct PercentageDetailView: View {
                     Button {
                         task.increment = Double(increment)!
                         task.progress -= task.increment
+                        task.lastUpdated = Date.now
                         percentage = task.progress / task.goal
                         progress = task.progress
                         PersistenceController().save(viewContext: viewContext)
@@ -86,10 +94,12 @@ struct PercentageDetailView: View {
                             .bold()
                     }
                         .dynamicTypeSize(.xxxLarge)
-                    TextField("\(task.increment)", text: $increment)
+                    // potential failsure if task.increment
+                    TextField("\(Utilities.formatNumber(value: task.increment))", text: $increment)
                         .font(.title)
                         .multilineTextAlignment(.center)
                         .background(Color.gray.opacity(0.5))
+                        .focused($focusedField, equals: .increment)
                         .cornerRadius(10)
                         .keyboardType(.decimalPad)
                         .onSubmit {
@@ -100,6 +110,7 @@ struct PercentageDetailView: View {
                     Button {
                         task.increment = Double(increment)!
                         task.progress += task.increment
+                        task.lastUpdated = Date.now
                         percentage = task.progress / task.goal
                         progress = task.progress
                         PersistenceController().save(viewContext: viewContext)
@@ -119,6 +130,7 @@ struct PercentageDetailView: View {
                     self.goal = task.goal
                 }
         }
+       
     }
     
 }
@@ -129,7 +141,7 @@ struct PercentageDetailView_Previews: PreviewProvider {
         let task = PercentageTask.init(context: viewContext)
         task.name = "Lorem Ipsum"
         task.birth = Date.now
-        task.progress = 33
+        task.progress = 33.5
         task.goal = 100
         
         return PercentageDetailView(task: task).environment(\.managedObjectContext, viewContext)

@@ -28,18 +28,15 @@ struct PercentageRowView: View {
             }
             VStack(alignment: .leading) {
                 Text(name)
-                    .font(.title)
-                    .bold()
-                    .scaledToFit()
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .frame(maxHeight: .infinity)
-                    .padding(.bottom, 10)
+                    .font(.largeTitle)
+                    .lineLimit(2)
                     .minimumScaleFactor(0.5)
+                    .padding(.bottom, 10)
                     .onAppear() {
                         self.name = task.name!
                     }
                 ProgressView(progress: $progress, goal: $goal, gradient: Gradient.init(primaryColor: task.color!) )
+                    .font(.title)
                     .onAppear() {
                         self.progress = task.progress
                         self.goal = task.goal
@@ -48,7 +45,10 @@ struct PercentageRowView: View {
                         self.progress = task.progress
                     })
             }
-                .padding(10)
+                .bold()
+                .multilineTextAlignment(.leading)
+                .foregroundColor(Utilities.getColorFromString(string: task.color!))
+                .padding(20)
         }
     }
 }
@@ -57,11 +57,12 @@ struct PercentageRowView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PersistenceController().container.viewContext
         let task = PercentageTask.init(context: viewContext)
-        task.name = "Lorem Ipsum long ass fucking name"
+        task.name = "Lorem Ipsum"
         task.color = "purple"
-        task.progress = 33
+        task.progress = 33.5
         task.goal = 100
         
         return PercentageRowView(task: task).environment(\.managedObjectContext, viewContext)
+            .previewLayout(.fixed(width: 1000, height: 300))
     }
 }

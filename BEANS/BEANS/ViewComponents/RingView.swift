@@ -37,32 +37,33 @@ struct RingView: View {
             )
                 .fill(self.gradient.stops[1].color)
                 .rotationEffect(.degrees(-90))
-                .shadow(radius: 10)
-            Text("\(Utilities.formatNumber(value: self.percentage * 100))%")
+                .shadow(color: Color.black.opacity(0.75), radius: 3)
+            Text(Utilities.formatPercentage(value: self.progress * 100))
                 .font(self.font)
                 .bold()
                 .foregroundColor(self.gradient.stops[1].color)
                 .scaledToFit()
                 .fixedSize(horizontal: false, vertical: true)
                 .minimumScaleFactor(0.1)
+                .frame(width: size.width - (2 * line_width), height: size.height - (2 * line_width), alignment: .center)
         }
-        .frame(width: size.width, height: size.width, alignment: .center)
-        .padding(20)
-        .onAppear() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                withAnimation(self.animation) {
-                    self.percentage = progress
+            .frame(width: size.width, height: size.width, alignment: .center)
+            .padding(20)
+            .onAppear() {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    withAnimation(self.animation) {
+                        self.percentage = progress
 
+                    }
                 }
             }
-        }
-        .onChange(of: progress, perform: { _ in
-            DispatchQueue.main.async {
-                withAnimation(self.animation) {
-                    self.percentage = progress
+            .onChange(of: progress, perform: { _ in
+                DispatchQueue.main.async {
+                    withAnimation(self.animation) {
+                        self.percentage = progress
+                    }
                 }
-            }
-        })
+            })
     }
     
 }

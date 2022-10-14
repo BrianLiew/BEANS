@@ -12,7 +12,7 @@ struct ProgressView: View {
     var body: some View {
         Text("\(Utilities.formatNumber(value: self.displayedProgress)) / \(Utilities.formatNumber(value: self.goal))")
             .foregroundColor(self.gradient.stops[1].color)
-            .font(.title3)
+            .font(.largeTitle)
             .bold()
             .scaledToFit()
             .minimumScaleFactor(0.5)
@@ -22,7 +22,7 @@ struct ProgressView: View {
                     self.updateProgress()
                 }
             }
-            .onChange(of: progress, perform: { _ in
+            .onChange(of: self.progress, perform: { _ in
                 DispatchQueue.main.async {
                     self.updateProgress()
                 }
@@ -30,14 +30,14 @@ struct ProgressView: View {
     }
     
     func updateProgress() -> Void {
-        self.displayedProgress = progress
+        self.displayedProgress = self.progress
     }
 }
 
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
         return ProgressView(
-            progress: .constant(5),
+            progress: .constant(5.5),
             goal: .constant(100),
             gradient: Gradient(primaryColor: "red"))
     }
