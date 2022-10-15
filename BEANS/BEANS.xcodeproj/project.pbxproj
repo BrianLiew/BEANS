@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		D3442D5228EBC07C00B687B4 /* TimedRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3442D5128EBC07C00B687B4 /* TimedRowView.swift */; };
 		D3442D5428EBC27000B687B4 /* TimedDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3442D5328EBC27000B687B4 /* TimedDetailView.swift */; };
+		D367240C28F95B96001D55F8 /* CreationSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367240B28F95B96001D55F8 /* CreationSelectionView.swift */; };
+		D367240E28FA9BCE001D55F8 /* PercentageSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367240D28FA9BCE001D55F8 /* PercentageSelectionRowView.swift */; };
+		D367241028FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367240F28FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift */; };
+		D367241228FA9FC6001D55F8 /* TimedSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367241128FA9FC6001D55F8 /* TimedSelectionRowView.swift */; };
 		D37B85FF28E993C5001834E8 /* TimerCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B85FE28E993C5001834E8 /* TimerCreationView.swift */; };
 		D37B860128EAC2EF001834E8 /* LocalNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B860028EAC2EF001834E8 /* LocalNotificationsManager.swift */; };
 		D37D3AD128D986580003237E /* BEANSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD028D986580003237E /* BEANSApp.swift */; };
@@ -27,12 +31,15 @@
 		D37D3AF628E6E7350003237E /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AF528E6E7340003237E /* ColorPickerView.swift */; };
 		D37D3AFE28E791170003237E /* AccumulatorRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AFD28E791170003237E /* AccumulatorRowView.swift */; };
 		D37D3B0228E791CC0003237E /* AccumulatorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3B0128E791CC0003237E /* AccumulatorDetailView.swift */; };
-		D37D3B0528E799F80003237E /* GoalCreationComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D3442D5128EBC07C00B687B4 /* TimedRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedRowView.swift; sourceTree = "<group>"; };
 		D3442D5328EBC27000B687B4 /* TimedDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedDetailView.swift; sourceTree = "<group>"; };
+		D367240B28F95B96001D55F8 /* CreationSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationSelectionView.swift; sourceTree = "<group>"; };
+		D367240D28FA9BCE001D55F8 /* PercentageSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageSelectionRowView.swift; sourceTree = "<group>"; };
+		D367240F28FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorSelectionRowView.swift; sourceTree = "<group>"; };
+		D367241128FA9FC6001D55F8 /* TimedSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedSelectionRowView.swift; sourceTree = "<group>"; };
 		D37B85FE28E993C5001834E8 /* TimerCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCreationView.swift; sourceTree = "<group>"; };
 		D37B860028EAC2EF001834E8 /* LocalNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsManager.swift; sourceTree = "<group>"; };
 		D37D3ACD28D986580003237E /* BEANS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BEANS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +60,6 @@
 		D37D3AF828E6EF160003237E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D37D3AFD28E791170003237E /* AccumulatorRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorRowView.swift; sourceTree = "<group>"; };
 		D37D3B0128E791CC0003237E /* AccumulatorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorDetailView.swift; sourceTree = "<group>"; };
-		D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCreationComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				D37D3AEF28E298D30003237E /* PercentageRowView.swift */,
+				D367240D28FA9BCE001D55F8 /* PercentageSelectionRowView.swift */,
+				D367240F28FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift */,
+				D367241128FA9FC6001D55F8 /* TimedSelectionRowView.swift */,
 				D37D3AFD28E791170003237E /* AccumulatorRowView.swift */,
 				D3442D5128EBC07C00B687B4 /* TimedRowView.swift */,
 			);
@@ -145,7 +154,6 @@
 			children = (
 				D37D3AF528E6E7340003237E /* ColorPickerView.swift */,
 				D37D3AF328E598BE0003237E /* ProgressView.swift */,
-				D37D3B0428E799F80003237E /* GoalCreationComponentView.swift */,
 				D37D3AEB28E28EA40003237E /* RingView.swift */,
 			);
 			path = ViewComponents;
@@ -156,6 +164,7 @@
 			children = (
 				D37B85FE28E993C5001834E8 /* TimerCreationView.swift */,
 				D37D3AE528E1783D0003237E /* CounterCreationView.swift */,
+				D367240B28F95B96001D55F8 /* CreationSelectionView.swift */,
 			);
 			path = CreationViews;
 			sourceTree = "<group>";
@@ -230,20 +239,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37D3B0528E799F80003237E /* GoalCreationComponentView.swift in Sources */,
 				D37D3AEA28E28E6A0003237E /* Shapes.swift in Sources */,
 				D37D3AF028E298D30003237E /* PercentageRowView.swift in Sources */,
 				D37B85FF28E993C5001834E8 /* TimerCreationView.swift in Sources */,
+				D367240C28F95B96001D55F8 /* CreationSelectionView.swift in Sources */,
 				D37D3AFE28E791170003237E /* AccumulatorRowView.swift in Sources */,
 				D37D3AF428E598BF0003237E /* ProgressView.swift in Sources */,
 				D37D3ADA28D9865A0003237E /* Persistence.swift in Sources */,
+				D367240E28FA9BCE001D55F8 /* PercentageSelectionRowView.swift in Sources */,
 				D3442D5228EBC07C00B687B4 /* TimedRowView.swift in Sources */,
 				D3442D5428EBC27000B687B4 /* TimedDetailView.swift in Sources */,
 				D37D3AE828E277090003237E /* PercentageDetailView.swift in Sources */,
 				D37D3AD328D986580003237E /* ContentView.swift in Sources */,
 				D37D3AEC28E28EA40003237E /* RingView.swift in Sources */,
 				D37B860128EAC2EF001834E8 /* LocalNotificationsManager.swift in Sources */,
+				D367241028FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift in Sources */,
 				D37D3AD128D986580003237E /* BEANSApp.swift in Sources */,
+				D367241228FA9FC6001D55F8 /* TimedSelectionRowView.swift in Sources */,
 				D37D3AEE28E28EE40003237E /* Utilities.swift in Sources */,
 				D37D3B0228E791CC0003237E /* AccumulatorDetailView.swift in Sources */,
 				D37D3ADD28D9865A0003237E /* BEANS.xcdatamodeld in Sources */,

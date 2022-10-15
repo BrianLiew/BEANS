@@ -24,6 +24,7 @@ struct TimedRowView: View {
     var body: some View {
         HStack {
             RingView(progress: $completionPercentage, font: .headline, gradient: Gradient.init(primaryColor: task.color!), line_width: 15, size: CGSize(width: 80, height: 80))
+                .frame(minWidth: 100, maxWidth: 100, minHeight: 100, maxHeight: 100)
                 .onAppear() {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         withAnimation(self.animation) {
@@ -51,6 +52,7 @@ struct TimedRowView: View {
                     .font(.title3)
             }
                 .bold()
+                .padding(20)
                 .foregroundColor(Utilities.getColorFromString(string: task.color!))
                 .multilineTextAlignment(.leading)
         }

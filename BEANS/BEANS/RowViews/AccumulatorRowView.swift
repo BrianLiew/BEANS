@@ -18,6 +18,7 @@ struct AccumulatorRowView: View {
                 .minimumScaleFactor(0.5)
                 .fixedSize(horizontal: false, vertical: true)
                 .dynamicTypeSize(.xxxLarge)
+                .frame(minWidth: 100, maxWidth: 100, minHeight: 100, maxHeight: 100)
                 .foregroundColor(Utilities.getColorFromString(string: task.color!))
                 .onAppear() {
                     self.progress = task.progress

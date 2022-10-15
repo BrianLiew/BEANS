@@ -19,8 +19,7 @@ struct ContentView: View {
     
     private var animation: Animation { Animation.easeInOut(duration: 1.5) }
     
-    @State private var showCounterCreationView: Bool = false
-    @State private var showTimerCreationView: Bool = false
+    @State private var showCreationSelectorView: Bool = false
     
     // @ObservedObject var timedModel = TimedTaskModel()
     // @ObservedObject var percentageModel = PercentageTaskModel()
@@ -94,28 +93,16 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItem {
                         Button {
-                            showCounterCreationView.toggle()
+                            showCreationSelectorView.toggle()
                         } label: {
-                            Image(systemName: "note.text.badge.plus")
-                        }
-                            .dynamicTypeSize(.xxxLarge)
-                            .foregroundColor(Color.orange)
-                    }
-                    ToolbarItem {
-                        Button {
-                            showTimerCreationView.toggle()
-                        } label: {
-                            Image(systemName: "timer")
+                            Image(systemName: "plus")
                         }
                             .dynamicTypeSize(.xxxLarge)
                             .foregroundColor(Color.orange)
                     }
                 }
-                .sheet(isPresented: $showCounterCreationView) {
-                    CounterCreationView()
-                }
-                .sheet(isPresented: $showTimerCreationView) {
-                    TimerCreationView()
+                .sheet(isPresented: $showCreationSelectorView) {
+                    CreationSelectionView()
                 }
         }
             .accentColor(Color.orange)

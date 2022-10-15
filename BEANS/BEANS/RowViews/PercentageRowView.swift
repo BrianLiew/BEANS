@@ -19,13 +19,14 @@ struct PercentageRowView: View {
                 line_width: 15,
                 size: CGSize(width: 80, height: 80)
             )
-            .onAppear() {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(Animation.easeInOut(duration: 1.5)) {
-                        self.percentage = task.progress / task.goal
+                .frame(minWidth: 100, maxWidth: 100, minHeight: 100, maxHeight: 100)
+                .onAppear() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        withAnimation(Animation.easeInOut(duration: 1.5)) {
+                            self.percentage = task.progress / task.goal
+                        }
                     }
                 }
-            }
             VStack(alignment: .leading) {
                 Text(name)
                     .font(.largeTitle)

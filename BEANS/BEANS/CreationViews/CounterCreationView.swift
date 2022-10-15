@@ -20,7 +20,7 @@ struct CounterCreationView: View {
     @State private var color: String = "red"
     @State private var progressStr: String = "0"
     @State private var goalStr: String = "0"
-    
+                
     private enum Field {
         case progress, goal
     }
@@ -42,7 +42,7 @@ struct CounterCreationView: View {
                         .frame(maxWidth: .infinity)
                         .minimumScaleFactor(0.5)
                         .bold()
-                        .padding(.vertical, 20)
+                        .padding(.vertical, 5)
                         .foregroundColor(Utilities.getColorFromString(string: self.color))
                 }
                 // MARK: - PROGRESS & GOAL?
