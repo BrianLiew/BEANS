@@ -13,6 +13,7 @@
 		D367240E28FA9BCE001D55F8 /* PercentageSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367240D28FA9BCE001D55F8 /* PercentageSelectionRowView.swift */; };
 		D367241028FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367240F28FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift */; };
 		D367241228FA9FC6001D55F8 /* TimedSelectionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367241128FA9FC6001D55F8 /* TimedSelectionRowView.swift */; };
+		D367241428FD4205001D55F8 /* PercentageCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D367241328FD4205001D55F8 /* PercentageCreationView.swift */; };
 		D37B85FF28E993C5001834E8 /* TimerCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B85FE28E993C5001834E8 /* TimerCreationView.swift */; };
 		D37B860128EAC2EF001834E8 /* LocalNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B860028EAC2EF001834E8 /* LocalNotificationsManager.swift */; };
 		D37D3AD128D986580003237E /* BEANSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD028D986580003237E /* BEANSApp.swift */; };
@@ -21,7 +22,7 @@
 		D37D3AD828D9865A0003237E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37D3AD728D9865A0003237E /* Preview Assets.xcassets */; };
 		D37D3ADA28D9865A0003237E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AD928D9865A0003237E /* Persistence.swift */; };
 		D37D3ADD28D9865A0003237E /* BEANS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D37D3ADB28D9865A0003237E /* BEANS.xcdatamodeld */; };
-		D37D3AE628E1783D0003237E /* CounterCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE528E1783D0003237E /* CounterCreationView.swift */; };
+		D37D3AE628E1783D0003237E /* AccumulatorCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE528E1783D0003237E /* AccumulatorCreationView.swift */; };
 		D37D3AE828E277090003237E /* PercentageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE728E277090003237E /* PercentageDetailView.swift */; };
 		D37D3AEA28E28E6A0003237E /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AE928E28E6A0003237E /* Shapes.swift */; };
 		D37D3AEC28E28EA40003237E /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37D3AEB28E28EA40003237E /* RingView.swift */; };
@@ -40,6 +41,7 @@
 		D367240D28FA9BCE001D55F8 /* PercentageSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageSelectionRowView.swift; sourceTree = "<group>"; };
 		D367240F28FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorSelectionRowView.swift; sourceTree = "<group>"; };
 		D367241128FA9FC6001D55F8 /* TimedSelectionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimedSelectionRowView.swift; sourceTree = "<group>"; };
+		D367241328FD4205001D55F8 /* PercentageCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCreationView.swift; sourceTree = "<group>"; };
 		D37B85FE28E993C5001834E8 /* TimerCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCreationView.swift; sourceTree = "<group>"; };
 		D37B860028EAC2EF001834E8 /* LocalNotificationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationsManager.swift; sourceTree = "<group>"; };
 		D37D3ACD28D986580003237E /* BEANS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BEANS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +51,7 @@
 		D37D3AD728D9865A0003237E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37D3AD928D9865A0003237E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D37D3ADC28D9865A0003237E /* BEANS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BEANS.xcdatamodel; sourceTree = "<group>"; };
-		D37D3AE528E1783D0003237E /* CounterCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterCreationView.swift; sourceTree = "<group>"; };
+		D37D3AE528E1783D0003237E /* AccumulatorCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccumulatorCreationView.swift; sourceTree = "<group>"; };
 		D37D3AE728E277090003237E /* PercentageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageDetailView.swift; sourceTree = "<group>"; };
 		D37D3AE928E28E6A0003237E /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		D37D3AEB28E28EA40003237E /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -163,7 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				D37B85FE28E993C5001834E8 /* TimerCreationView.swift */,
-				D37D3AE528E1783D0003237E /* CounterCreationView.swift */,
+				D37D3AE528E1783D0003237E /* AccumulatorCreationView.swift */,
+				D367241328FD4205001D55F8 /* PercentageCreationView.swift */,
 				D367240B28F95B96001D55F8 /* CreationSelectionView.swift */,
 			);
 			path = CreationViews;
@@ -254,13 +257,14 @@
 				D37D3AEC28E28EA40003237E /* RingView.swift in Sources */,
 				D37B860128EAC2EF001834E8 /* LocalNotificationsManager.swift in Sources */,
 				D367241028FA9DCA001D55F8 /* AccumulatorSelectionRowView.swift in Sources */,
+				D367241428FD4205001D55F8 /* PercentageCreationView.swift in Sources */,
 				D37D3AD128D986580003237E /* BEANSApp.swift in Sources */,
 				D367241228FA9FC6001D55F8 /* TimedSelectionRowView.swift in Sources */,
 				D37D3AEE28E28EE40003237E /* Utilities.swift in Sources */,
 				D37D3B0228E791CC0003237E /* AccumulatorDetailView.swift in Sources */,
 				D37D3ADD28D9865A0003237E /* BEANS.xcdatamodeld in Sources */,
 				D37D3AF628E6E7350003237E /* ColorPickerView.swift in Sources */,
-				D37D3AE628E1783D0003237E /* CounterCreationView.swift in Sources */,
+				D37D3AE628E1783D0003237E /* AccumulatorCreationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

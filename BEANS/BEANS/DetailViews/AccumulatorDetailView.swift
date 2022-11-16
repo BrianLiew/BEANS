@@ -43,19 +43,18 @@ struct AccumulatorDetailView: View {
                         })
                 }
                     .frame(minHeight: 50, maxHeight: 100)
-                Text("Started \(Utilities.timeFormatter(time: task.birth!))")
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    .padding(20)
+                    .padding(.top, 25)
+                // where birth was
             }
             Text("\(Utilities.formatNumber(value: self.progress))")
-                .font(.largeTitle)
+                .font(.system(size: 96))
                 .bold()
                 .dynamicTypeSize(.xxxLarge)
                 .scaledToFit()
-                .minimumScaleFactor(0.5)
+                .minimumScaleFactor(0.25)
                 .fixedSize(horizontal: false, vertical: true)
-                .padding(20)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 50)
                 .foregroundColor(Utilities.getColorFromString(string: task.color!))
             HStack(alignment: .center) {
                 Button {
@@ -72,8 +71,10 @@ struct AccumulatorDetailView: View {
                     .dynamicTypeSize(.xxxLarge)
                 TextField("\(task.increment)", text: $increment)
                     .font(.title)
+                    .bold()
+                    .foregroundColor(.orange)
                     .multilineTextAlignment(.center)
-                    .background(Color.gray.opacity(0.5))
+                    .background(Color.gray.opacity(0.25))
                     .cornerRadius(10)
                     .focused($focusedField, equals: .increment)
                     .keyboardType(.decimalPad)
@@ -103,6 +104,11 @@ struct AccumulatorDetailView: View {
                 self.progress = task.progress
                 self.increment = String(task.increment)
             }
+        Spacer()
+        Text("Started \(Utilities.timeFormatter(time: task.birth!))")
+            .font(.headline)
+            .foregroundColor(.gray)
+            .padding(20)
     }
     
 }

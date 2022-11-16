@@ -72,12 +72,13 @@ struct RingView_Previews: PreviewProvider {
     static var previews: some View {
         
         return RingView(
-            progress: .constant(0.000000005),
+            progress: .constant(0.42857),
             font: .headline,
             gradient: Gradient(colors: [.blue, .indigo]),
             line_width: 20,
             size: CGSize(width: 100, height: 100)
         )
+        .previewLayout(.fixed(width: 200, height: 200))
     }
 }
 

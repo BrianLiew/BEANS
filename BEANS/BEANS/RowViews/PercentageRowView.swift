@@ -64,6 +64,6 @@ struct PercentageRowView_Previews: PreviewProvider {
         task.goal = 100
         
         return PercentageRowView(task: task).environment(\.managedObjectContext, viewContext)
-            .previewLayout(.fixed(width: 1000, height: 300))
+            .previewLayout(.fixed(width: 400, height: 150))
     }
 }

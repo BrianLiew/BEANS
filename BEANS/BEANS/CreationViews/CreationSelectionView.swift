@@ -1,19 +1,14 @@
-//
-//  CreationSelectionView.swift
-//  BEANS
-//
-//  Created by Brian Liew on 10/14/22.
-//
-
 import SwiftUI
 
 struct CreationSelectionView: View {
+    @Binding var showCreationSelectorView: Bool
+    
     var body: some View {
         NavigationView {
             VStack {
                 RoundedRectangle(cornerRadius: 100)
                     .frame(maxWidth: 50, maxHeight: 5)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.gray.opacity(0.5))
                     .padding(.top, 20)
                 Text("I'd like to...")
                     .font(.largeTitle)
@@ -23,17 +18,17 @@ struct CreationSelectionView: View {
                     .padding(20)
                 List {
                     NavigationLink {
-                        CounterCreationView()
+                        PercentageCreationView(showCreationSelectorView: $showCreationSelectorView)
                     } label: {
                         PercentageSelectionRowView()
                     }
                     NavigationLink {
-                        CounterCreationView()
+                        AccumulatorCreationView(showCreationSelectorView: $showCreationSelectorView)
                     } label: {
                         AccumulatorSelectionRowView()
                     }
                     NavigationLink {
-                        TimerCreationView()
+                        TimerCreationView(showCreationSelectorView: $showCreationSelectorView)
                     } label: {
                         TimedSelectionRowView()
                     }
@@ -45,6 +40,6 @@ struct CreationSelectionView: View {
 
 struct CreationSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        CreationSelectionView()
+        CreationSelectionView(showCreationSelectorView: .constant(true))
     }
 }

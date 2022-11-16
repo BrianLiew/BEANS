@@ -37,6 +37,6 @@ struct PercentageSelectionRowView: View {
 struct PercentageSelectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         PercentageSelectionRowView()
-            .previewLayout(.fixed(width: 1000, height: 300))
+            .previewLayout(.fixed(width: 400, height: 150))
     }
 }

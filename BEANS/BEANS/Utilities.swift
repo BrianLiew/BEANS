@@ -28,8 +28,8 @@ struct Utilities {
         if (value.truncatingRemainder(dividingBy: 1) > 0) {
             formatter.usesSignificantDigits = true
             formatter.alwaysShowsDecimalSeparator = true
-            formatter.maximumFractionDigits = 2
-            formatter.roundingIncrement = 0.01
+            formatter.maximumFractionDigits = 1
+            formatter.roundingIncrement = 0.1
         }
         // if value is a whole number
         else {
@@ -84,7 +84,7 @@ extension Gradient {
             case "purple":
                 colors = [.purple, .indigo]
             default:
-                colors = [.white, .gray]
+            colors = [.clear]
         }
         
         self.init(colors: colors)

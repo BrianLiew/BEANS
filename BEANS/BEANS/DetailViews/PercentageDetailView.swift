@@ -47,39 +47,39 @@ struct PercentageDetailView: View {
                             })
                     }
                         .frame(minHeight: 50, maxHeight: 100)
-                    Text("Started \(Utilities.timeFormatter(time: task.birth!))")
-                        .font(.headline)
-                        .foregroundColor(.gray)
-                        .padding(20)
                 }
-                RingView(
-                    progress: $percentage,
-                    font: .largeTitle,
-                    gradient: Gradient.init(primaryColor: task.color!),
-                    line_width: 30,
-                    size: CGSize(width: 200, height: 200)
-                )
-                    .onAppear() {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                            withAnimation(self.animation) {
-                                self.percentage = task.progress / task.goal
+                Group {
+                    RingView(
+                        progress: $percentage,
+                        font: .largeTitle,
+                        gradient: Gradient.init(primaryColor: task.color!),
+                        line_width: 30,
+                        size: CGSize(width: 200, height: 200)
+                    )
+                        .padding(.top, 50)
+                        .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                withAnimation(self.animation) {
+                                    self.percentage = task.progress / task.goal
+                                }
                             }
                         }
-                    }
-                ProgressView(progress: $progress, goal: $goal, gradient: Gradient.init(primaryColor: task.color!) )
-                    .onAppear() {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                self.progress = task.progress
-                                self.goal = task.goal
-                        }
-                    }
-                    .onChange(of: task.progress, perform: { _ in
-                        DispatchQueue.main.async {
-                            withAnimation(self.animation) {
-                                self.progress = task.progress
+                    ProgressView(progress: $progress, goal: $goal, gradient: Gradient.init(primaryColor: task.color!) )
+                        .padding(.bottom, 100)
+                        .onAppear() {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                    self.progress = task.progress
+                                    self.goal = task.goal
                             }
                         }
-                    })
+                        .onChange(of: task.progress, perform: { _ in
+                            DispatchQueue.main.async {
+                                withAnimation(self.animation) {
+                                    self.progress = task.progress
+                                }
+                            }
+                        })
+                }
                 HStack(alignment: .center) {
                     Button {
                         task.increment = Double(increment)!
@@ -129,8 +129,12 @@ struct PercentageDetailView: View {
                     self.increment = String(task.increment)
                     self.goal = task.goal
                 }
+            Spacer()
+            Text("Started \(Utilities.timeFormatter(time: task.birth!))")
+                .font(.headline)
+                .foregroundColor(.gray)
+                .padding(20)
         }
-       
     }
     
 }

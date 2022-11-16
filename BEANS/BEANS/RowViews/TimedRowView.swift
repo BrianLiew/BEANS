@@ -1,10 +1,3 @@
-//
-//  TimedRowView.swift
-//  BEANS
-//
-//  Created by Brian Liew on 10/3/22.
-//
-
 import SwiftUI
 
 struct TimedRowView: View {
@@ -67,10 +60,10 @@ struct TimedRowView_Previews: PreviewProvider {
     static var previews: some View {
         let viewContext = PersistenceController().container.viewContext
         let task = TimedTask.init(context: viewContext)
-        task.name = "Lorem Ipsum long ass title blah blah"
+        task.name = "Lorem Ipsum"
         task.color = "purple"
         task.progress = 4
         
         return TimedRowView(task: task).environment(\.managedObjectContext, viewContext)
-            .previewLayout(.fixed(width: 1000, height: 300))    }
+            .previewLayout(.fixed(width: 400, height: 150))    }
 }

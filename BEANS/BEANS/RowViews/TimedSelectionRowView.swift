@@ -4,6 +4,7 @@ struct TimedSelectionRowView: View {
     @State var progress: Int = 0
     @State var title: String = "Daily habits"
     @State var dayStr: String = "Mon"
+    @State var presented: Bool = false
     
     private var dayStrings: [String] = [
         "Mon",
@@ -29,7 +30,10 @@ struct TimedSelectionRowView: View {
                         .multilineTextAlignment(.leading)
                         .foregroundColor(Color.red)
                         .onAppear() {
-                            self.addNumberWithRollingAnimation()
+                            if (presented == false) {
+                                self.addNumberWithRollingAnimation()
+                                presented = true
+                            }
                         }
                     Text("\(self.progress)")
                         .font(.largeTitle)
@@ -84,6 +88,6 @@ struct TimedSelectionRowView: View {
 struct TimedSelectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         TimedSelectionRowView()
-            .previewLayout(.fixed(width: 1000, height: 300))
+            .previewLayout(.fixed(width: 400, height: 150))
     }
 }

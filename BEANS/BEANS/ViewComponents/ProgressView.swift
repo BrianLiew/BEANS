@@ -40,5 +40,6 @@ struct ProgressView_Previews: PreviewProvider {
             progress: .constant(5.5),
             goal: .constant(100),
             gradient: Gradient(primaryColor: "red"))
+            .previewLayout(.fixed(width: 200, height: 100))
     }
 }

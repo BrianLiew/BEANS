@@ -3,6 +3,7 @@ import SwiftUI
 struct TimerCreationView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
+    @Binding var showCreationSelectorView: Bool
     
     private var animation: Animation {
         return Animation.easeInOut(duration: 1.5)
@@ -70,28 +71,12 @@ struct TimerCreationView: View {
                 }
                 // MARK: -
                 Section(header: Text("Notifications")) {
-                    VStack {
-                        DatePicker("Reminder Time",
-                                   selection: $reminderTime,
-                                   displayedComponents: .hourAndMinute)
-                            .opacity(isTimedReminder ? 1 : 0)
-                            .disabled(isTimedReminder ? false : true)
-                            .datePickerStyle(.graphical)
-                    }
-                    VStack {
-                        Toggle("Has Deadline", isOn: $hasDeadline)
-                            .font(.headline)
-                        DatePicker("Deadline",
-                                   selection: $deadline,
-                                   in: dateRange)
-                            .labelsHidden()
-                            .opacity(hasDeadline ? 1 : 0.25)
-                            .disabled(hasDeadline ? false : true)
-                            .datePickerStyle(.graphical)
-                            .tint(Color.orange)
-                            .accentColor(Color.orange)
-                            .focused($focusedField, equals: .deadline)
-                    }
+                    DatePicker("Reminder Time",
+                               selection: $reminderTime,
+                               displayedComponents: .hourAndMinute)
+                        .opacity(isTimedReminder ? 1 : 0)
+                        .disabled(isTimedReminder ? false : true)
+                        .datePickerStyle(.graphical)
                 }
             }
                 .multilineTextAlignment(.center)
@@ -101,7 +86,7 @@ struct TimerCreationView: View {
                 Button {
                     PersistenceController().addTimedTask(name: self.name, color: self.color, viewContext: self.viewContext)
                     LocalNotificationsManager.generateLocalNotification(name: self.name, reminderTime: self.reminderTime)
-                    dismiss()
+                    self.showCreationSelectorView = false
                 } label: {
                     Text("Create")
                         .bold()
@@ -118,6 +103,6 @@ struct TimerCreationView: View {
 
 struct TimerCreationView_Preview: PreviewProvider {
     static var previews: some View {
-        TimerCreationView()
+        TimerCreationView(showCreationSelectorView: .constant(true))
     }
 }

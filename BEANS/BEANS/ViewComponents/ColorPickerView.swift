@@ -1,10 +1,3 @@
-//
-//  ColorPickerView.swift
-//  BEANS
-//
-//  Created by Brian Liew on 9/30/22.
-//
-
 import SwiftUI
 
 struct ColorPickerView: View {
@@ -57,5 +50,6 @@ struct ColorPickerView: View {
 struct ColorPickerView_Previews: PreviewProvider {
     static var previews: some View {
         ColorPickerView(color: .constant("red"))
+            .previewLayout(.fixed(width: 300, height: 100))
     }
 }

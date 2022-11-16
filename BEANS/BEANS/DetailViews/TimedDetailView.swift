@@ -1,10 +1,3 @@
-//
-//  TimedDetailView.swift
-//  BEANS
-//
-//  Created by Brian Liew on 10/3/22.
-//
-
 import SwiftUI
 
 struct TimedDetailView: View {
@@ -55,123 +48,127 @@ struct TimedDetailView: View {
                         })
                 }
                     .frame(minHeight: 50, maxHeight: 100)
-                Text("Started \(Utilities.timeFormatter(time: task.birth!))")
-                    .font(.headline)
-                    .foregroundColor(.gray)
-                    .padding(20)
             }
-            RingView(
-                progress: $completionPercentage,
-                font: .largeTitle,
-                gradient: Gradient.init(primaryColor: task.color!),
-                line_width: 30,
-                size: CGSize(width: 200, height: 200))
-                .onAppear() {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        withAnimation(self.animation) {
-                            self.completionPercentage = Double(task.progress) / Double(age)
-                            /*
-                            if (Calendar.current.numberOfDaysInBetween(from: task.birth!, to: Date.now) > 0) {
+            Group {
+                RingView(
+                    progress: $completionPercentage,
+                    font: .largeTitle,
+                    gradient: Gradient.init(primaryColor: task.color!),
+                    line_width: 30,
+                    size: CGSize(width: 200, height: 200))
+                    .onAppear() {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation(self.animation) {
                                 self.completionPercentage = Double(task.progress) / Double(age)
-                            } */
+                                /*
+                                if (Calendar.current.numberOfDaysInBetween(from: task.birth!, to: Date.now) > 0) {
+                                    self.completionPercentage = Double(task.progress) / Double(age)
+                                } */
+                            }
                         }
                     }
-                }
-                .onChange(of: task.progress, perform: { _ in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        withAnimation(self.animation) {
-                            self.completionPercentage = Double(task.progress) / Double(age)
+                    .padding(.top, 50)
+                    .onChange(of: task.progress, perform: { _ in
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            withAnimation(self.animation) {
+                                self.completionPercentage = Double(task.progress) / Double(age)
+                            }
                         }
-                    }
-                })
-                .onChange(of: task.progress, perform: { _ in
-                    self.progress = Int(task.progress)
-                })
-            HStack(spacing: 50) {
-                VStack(alignment: .center) {
-                    HStack {
-                        Text("\(self.age)")
-                            .foregroundColor(Gradient(primaryColor: task.color!).stops[1].color)
-                            .font(.largeTitle)
-                        Text(self.ageStr)
-                            .foregroundColor(Color.gray)
-                            .font(.title)
-                            .onChange(of: self.age, perform: { _ in
-                                if (self.age == 1) {
-                                    self.ageStr = "Day"
-                                }
-                                else {
-                                    self.ageStr = "Days"
-                                }
-                            })
-                    }
+                    })
+                    .onChange(of: task.progress, perform: { _ in
+                        self.progress = Int(task.progress)
+                    })
+                HStack(spacing: 50) {
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("\(self.age)")
+                                .foregroundColor(Gradient(primaryColor: task.color!).stops[1].color)
+                                .font(.largeTitle)
+                                .bold()
+                            Text(self.ageStr)
+                                .foregroundColor(Color.gray)
+                                .font(.headline)
+                                .onChange(of: self.age, perform: { _ in
+                                    if (self.age == 1) {
+                                        self.ageStr = "Day"
+                                    }
+                                    else {
+                                        self.ageStr = "Days"
+                                    }
+                                })
+                        }
 
-                    Text("Task Age")
-                        .foregroundColor(Color.gray)
-                        .font(.headline)
-                }
-                VStack(alignment: .center) {
-                    HStack {
-                        Text("\(self.progress)")
-                            .foregroundColor(Gradient(primaryColor: task.color!).stops[1].color)
-                            .font(.largeTitle)
-                        Text(self.progressStr)
+                        Text("Old")
                             .foregroundColor(Color.gray)
-                            .font(.title)
-                            .onChange(of: self.progress, perform: { _ in
-                                if (self.progress == 1) {
-                                    self.progressStr = "Day"
-                                }
-                                else {
-                                    self.progressStr = "Days"
-                                }
-                            })
-
+                            .font(.headline)
                     }
-                    Text("Days Completed")
-                        .foregroundColor(Color.gray)
-                        .font(.headline)
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("\(self.progress)")
+                                .foregroundColor(Gradient(primaryColor: task.color!).stops[1].color)
+                                .font(.largeTitle)
+                                .bold()
+                            Text(self.progressStr)
+                                .foregroundColor(Color.gray)
+                                .font(.headline)
+                                .onChange(of: self.progress, perform: { _ in
+                                    if (self.progress == 1) {
+                                        self.progressStr = "Day"
+                                    }
+                                    else {
+                                        self.progressStr = "Days"
+                                    }
+                                })
+
+                        }
+                        Text("Completed")
+                            .foregroundColor(Color.gray)
+                            .font(.headline)
+                    }
                 }
+                    .scaledToFill()
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 50)
             }
-                .bold()
-                .scaledToFill()
-                .multilineTextAlignment(.center)
-                .padding(20)
             ZStack {
-                Rectangle()
+                RoundedRectangle(cornerRadius: 10)
                     .fill(buttonEnabled ? Gradient(primaryColor: task.color!) : Gradient(primaryColor: ""))
+                    .padding(.horizontal, 50)
+                    .shadow(radius: 5)
                 Button {
                     task.progress += 1
                     task.lastUpdated = Date.now
                     self.buttonEnabled = false
                     PersistenceController().save(viewContext: self.viewContext)
                 } label: {
-                    Text(buttonEnabled ? "Complete" : "Good job :)")
-                        .bold()
-                        .foregroundColor(buttonEnabled ? Color.white : Color.black)
+                    Text(buttonEnabled ? "I did it!" : "Good job :)")
+                        .foregroundColor(buttonEnabled ? Color.white : Utilities.getColorFromString(string: task.color!))
                         .multilineTextAlignment(.center)
-                        .dynamicTypeSize(.xxxLarge)
                         .font(.largeTitle)
+                        .bold()
                         .padding(20)
                 }
                     .dynamicTypeSize(.xxxLarge)
                     .cornerRadius(10)
                     .disabled(buttonEnabled ? false : true)
-                    .opacity(buttonEnabled ? 1 : 0.25)
             }
         }
-        .onAppear() {
-            self.name = task.name!
-            self.progress = Int(task.progress)
-            self.age = Calendar.current.numberOfDaysInBetween(from: task.birth!, to: Date.now) + 1
-            if (Calendar.current.component(.day, from: Calendar.current.startOfDay(for: Date.now)) == Calendar.current.component(.day, from: Calendar.current.startOfDay(for: task.lastUpdated!))) {
-                buttonEnabled = false
+            .onAppear() {
+                self.name = task.name!
+                self.progress = Int(task.progress)
+                self.age = Calendar.current.numberOfDaysInBetween(from: task.birth!, to: Date.now) + 1
+                if (Calendar.current.component(.day, from: Calendar.current.startOfDay(for: Date.now)) == Calendar.current.component(.day, from: Calendar.current.startOfDay(for: task.lastUpdated!))) {
+                    buttonEnabled = false
+                }
+                else {
+                    buttonEnabled = true
+                }
             }
-            else {
-                buttonEnabled = true
-            }
-        }
-        
+        Text("Started \(Utilities.timeFormatter(time: task.birth!))")
+            .font(.headline)
+            .foregroundColor(.gray)
+            .padding(20)
     }
 }
 

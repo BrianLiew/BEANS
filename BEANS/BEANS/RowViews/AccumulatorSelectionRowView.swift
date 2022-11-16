@@ -3,6 +3,7 @@ import SwiftUI
 struct AccumulatorSelectionRowView: View {
     @State var progress: Int = 0
     @State var title: String = "Count infinitely"
+    @State var presented: Bool = false
     
     var body: some View {
         HStack {
@@ -16,7 +17,10 @@ struct AccumulatorSelectionRowView: View {
                 .padding(20)
                 .frame(minWidth: 100, maxWidth: 100, minHeight: 100, maxHeight: 100)
                 .onAppear() {
-                    self.addNumberWithRollingAnimation()
+                    if (presented == false) {
+                        self.addNumberWithRollingAnimation()
+                        presented = true
+                    }
                 }
             Text(title)
                 .font(.largeTitle)
@@ -59,6 +63,6 @@ struct AccumulatorSelectionRowView: View {
 struct AccumulatorSelectionRowView_Previews: PreviewProvider {
     static var previews: some View {
         AccumulatorSelectionRowView()
-            .previewLayout(.fixed(width: 1000, height: 300))
+            .previewLayout(.fixed(width: 400, height: 150))
     }
 }

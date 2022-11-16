@@ -21,8 +21,13 @@ struct ContentView: View {
     
     @State private var showCreationSelectorView: Bool = false
     
-    // @ObservedObject var timedModel = TimedTaskModel()
-    // @ObservedObject var percentageModel = PercentageTaskModel()
+    init() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().tintColor = .clear
+        UINavigationBar.appearance().backgroundColor = .clear
+    }
         
     var body: some View {
         NavigationView {
@@ -88,7 +93,7 @@ struct ContentView: View {
                 .accentColor(Color.orange)
                 .tint(Color.orange)
                 .navigationTitle("YOUR BEANS")
-                .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitleDisplayMode(.inline)
                 .font(.largeTitle)
                 .toolbar {
                     ToolbarItem {
@@ -102,7 +107,7 @@ struct ContentView: View {
                     }
                 }
                 .sheet(isPresented: $showCreationSelectorView) {
-                    CreationSelectionView()
+                    CreationSelectionView(showCreationSelectorView: $showCreationSelectorView)
                 }
         }
             .accentColor(Color.orange)

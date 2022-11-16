@@ -1,8 +1,9 @@
 import SwiftUI
 
-struct CounterCreationView: View {
+struct AccumulatorCreationView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.dismiss) private var dismiss
+    @Binding var showCreationSelectorView: Bool
     
     private var animation: Animation {
         return Animation.easeInOut(duration: 1.5)
@@ -52,7 +53,9 @@ struct CounterCreationView: View {
                         .font(.headline)
                     TextField(self.progressStr, text: $progressStr)
                         .keyboardType(.decimalPad)
-                        .background(Color.gray.opacity(0.2))
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(Utilities.getColorFromString(string: self.color))
                         .cornerRadius(10)
                         .frame(minHeight: 50)
                         .focused($focusedField, equals: .progress)
@@ -67,21 +70,6 @@ struct CounterCreationView: View {
                             if let progress = Double(self.progressStr) {
                                 self.progress = progress
                             }
-                        })
-                    VStack {
-                        Toggle("Has Goal", isOn: $hasGoal)
-                            .font(.headline)
-                        TextField(self.goalStr, text: $goalStr)
-                            .keyboardType(.decimalPad)
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(10)
-                            .frame(minHeight: 50)
-                            .disabled(hasGoal ? false : true)
-                            .opacity(hasGoal ? 1 : 0.25)
-                            .focused($focusedField, equals: .goal)
-                    }
-                        .onChange(of: self.goalStr, perform: { _ in
-                            self.goal = Double(self.goalStr)
                         })
                 }
                     .multilineTextAlignment(.center)
@@ -107,7 +95,7 @@ struct CounterCreationView: View {
                                 viewContext: self.viewContext)
                         }
                     }
-                    dismiss()
+                    showCreationSelectorView = false
                 } label: {
                     Text("Create")
                         .foregroundColor(Color.white)
@@ -123,8 +111,8 @@ struct CounterCreationView: View {
     
 }
 
-struct CounterCreationView_Previews: PreviewProvider {
+struct AccumulatorCreationView_Previews: PreviewProvider {
     static var previews: some View {
-        CounterCreationView()
+        AccumulatorCreationView(showCreationSelectorView: .constant(true))
     }
 }

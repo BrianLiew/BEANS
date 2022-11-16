@@ -1,10 +1,3 @@
-//
-//  Persistence.swift
-//  BEANS
-//
-//  Created by Brian Liew on 9/20/22.
-//
-
 import CoreData
 import SwiftUI
 
