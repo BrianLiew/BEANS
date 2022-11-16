@@ -20,81 +20,76 @@ struct ContentView: View {
     private var animation: Animation { Animation.easeInOut(duration: 1.5) }
     
     @State private var showCreationSelectorView: Bool = false
-    
-    init() {
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().isTranslucent = true
-        UINavigationBar.appearance().tintColor = .clear
-        UINavigationBar.appearance().backgroundColor = .clear
-    }
         
     var body: some View {
         NavigationView {
             TabView {
-                List {
-                    ForEach(percentageTasks) { task in
-                        NavigationLink {
-                            PercentageDetailView(task: task)
-                        } label: {
-                            PercentageRowView(task: task)
+                Group {
+                    List {
+                        ForEach(percentageTasks) { task in
+                            NavigationLink {
+                                PercentageDetailView(task: task)
+                            } label: {
+                                PercentageRowView(task: task)
+                            }
+                        }
+                        .onDelete { IndexSet in
+                            PersistenceController().deletePercentageTask(
+                                offsets: IndexSet,
+                                tasks: percentageTasks,
+                                viewContext: viewContext)
                         }
                     }
-                    .onDelete { IndexSet in
-                        PersistenceController().deletePercentageTask(
-                            offsets: IndexSet,
-                            tasks: percentageTasks,
-                            viewContext: viewContext)
-                    }
-                }
-                    .frame(alignment: .top)
-                    .tabItem {
-                        Image(systemName: "trophy.fill")
-                        Text("Goals")
-                    }
-                List {
-                    ForEach(accumulatorTasks) { task in
-                        NavigationLink {
-                            AccumulatorDetailView(task: task)
-                        } label: {
-                            AccumulatorRowView(task: task)
+                        .frame(alignment: .top)
+                        .tabItem {
+                            Image(systemName: "trophy.fill")
+                            Text("Goals")
+                        }
+                    List {
+                        ForEach(accumulatorTasks) { task in
+                            NavigationLink {
+                                AccumulatorDetailView(task: task)
+                            } label: {
+                                AccumulatorRowView(task: task)
+                            }
+                        }
+                        .onDelete { IndexSet in
+                            PersistenceController().deleteAccumulatorTask(
+                                offsets: IndexSet,
+                                tasks: accumulatorTasks,
+                                viewContext: viewContext)
                         }
                     }
-                    .onDelete { IndexSet in
-                        PersistenceController().deleteAccumulatorTask(
-                            offsets: IndexSet,
-                            tasks: accumulatorTasks,
-                            viewContext: viewContext)
-                    }
-                }
-                    .frame(alignment: .top)
-                    .tabItem {
-                        Image(systemName: "basket.fill")
-                        Text("Counts")
-                    }
-                List {
-                    ForEach(timedTasks) { task in
-                        NavigationLink {
-                            TimedDetailView(task: task)
-                        } label: {
-                            TimedRowView(task: task)
+                        .frame(alignment: .top)
+                        .tabItem {
+                            Image(systemName: "basket.fill")
+                            Text("Counts")
+                        }
+                    List {
+                        ForEach(timedTasks) { task in
+                            NavigationLink {
+                                TimedDetailView(task: task)
+                            } label: {
+                                TimedRowView(task: task)
+                            }
+                        }
+                        .onDelete { IndexSet in
+                            PersistenceController().deleteTimedTask(offsets: IndexSet, tasks: timedTasks, viewContext: self.viewContext)
                         }
                     }
-                    .onDelete { IndexSet in
-                        PersistenceController().deleteTimedTask(offsets: IndexSet, tasks: timedTasks, viewContext: self.viewContext)
-                    }
+                        .frame(alignment: .top)
+                        .tabItem {
+                            Image(systemName: "timer")
+                            Text("Timed")
+                        }
                 }
-                    .frame(alignment: .top)
-                    .tabItem {
-                        Image(systemName: "timer")
-                        Text("Timed")
-                    }
+                .padding(.vertical, 25)
             }
                 .accentColor(Color.orange)
                 .tint(Color.orange)
                 .navigationTitle("YOUR BEANS")
-                .navigationBarTitleDisplayMode(.inline)
-                .font(.largeTitle)
+                .navigationBarTitleDisplayMode(.large)
+                .font(.title)
                 .toolbar {
                     ToolbarItem {
                         Button {

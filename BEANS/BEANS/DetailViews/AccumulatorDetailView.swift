@@ -43,8 +43,6 @@ struct AccumulatorDetailView: View {
                         })
                 }
                     .frame(minHeight: 50, maxHeight: 100)
-                    .padding(.top, 25)
-                // where birth was
             }
             Text("\(Utilities.formatNumber(value: self.progress))")
                 .font(.system(size: 96))
@@ -98,17 +96,16 @@ struct AccumulatorDetailView: View {
             }
             .padding(.horizontal, 50)
             Spacer()
+            Text("Started \(Utilities.timeFormatter(time: task.birth!))")
+                .font(.headline)
+                .foregroundColor(.gray)
+                .padding(20)
         }
             .onAppear() {
                 self.name = task.name!
                 self.progress = task.progress
                 self.increment = String(task.increment)
             }
-        Spacer()
-        Text("Started \(Utilities.timeFormatter(time: task.birth!))")
-            .font(.headline)
-            .foregroundColor(.gray)
-            .padding(20)
     }
     
 }

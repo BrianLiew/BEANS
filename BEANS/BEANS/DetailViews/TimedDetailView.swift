@@ -153,6 +153,11 @@ struct TimedDetailView: View {
                     .cornerRadius(10)
                     .disabled(buttonEnabled ? false : true)
             }
+            Spacer()
+            Text("Started \(Utilities.timeFormatter(time: task.birth!))")
+                .font(.headline)
+                .foregroundColor(.gray)
+                .padding(20)
         }
             .onAppear() {
                 self.name = task.name!
@@ -165,11 +170,6 @@ struct TimedDetailView: View {
                     buttonEnabled = true
                 }
             }
-        Spacer()
-        Text("Started \(Utilities.timeFormatter(time: task.birth!))")
-            .font(.headline)
-            .foregroundColor(.gray)
-            .padding(20)
     }
 }
 
