@@ -51,7 +51,7 @@ struct PercentageDetailView: View {
                 Group {
                     RingView(
                         progress: $percentage,
-                        font: .largeTitle,
+                        font: .system(size: 48),
                         gradient: Gradient.init(primaryColor: task.color!),
                         line_width: 30,
                         size: CGSize(width: 200, height: 200)
@@ -97,8 +97,10 @@ struct PercentageDetailView: View {
                     // potential failsure if task.increment
                     TextField("\(Utilities.formatNumber(value: task.increment))", text: $increment)
                         .font(.title)
+                        .foregroundColor(.orange)
+                        .bold()
                         .multilineTextAlignment(.center)
-                        .background(Color.gray.opacity(0.5))
+                        .background(Color.gray.opacity(0.25))
                         .focused($focusedField, equals: .increment)
                         .cornerRadius(10)
                         .keyboardType(.decimalPad)
@@ -106,7 +108,7 @@ struct PercentageDetailView: View {
                             task.increment = Double(increment)!
                             PersistenceController().save(viewContext: viewContext)
                         }
-                        .padding(20)
+                        .padding(.horizontal, 20)
                     Button {
                         task.increment = Double(increment)!
                         task.progress += task.increment
@@ -122,6 +124,7 @@ struct PercentageDetailView: View {
                         .dynamicTypeSize(.xxxLarge)
                 }
                     .padding(.horizontal, 50)
+                    .padding(.bottom, 50)
                 Spacer()
             }
                 .onAppear() {

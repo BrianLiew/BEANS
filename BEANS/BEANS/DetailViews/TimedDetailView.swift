@@ -165,6 +165,7 @@ struct TimedDetailView: View {
                     buttonEnabled = true
                 }
             }
+        Spacer()
         Text("Started \(Utilities.timeFormatter(time: task.birth!))")
             .font(.headline)
             .foregroundColor(.gray)
